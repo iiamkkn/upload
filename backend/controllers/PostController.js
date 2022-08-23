@@ -1,11 +1,11 @@
 // import PostModel from '../models/postModel.js';
-import Product from '../models/productModel.js';
-import User from '../models/userModel.js';
-import mongoose from 'mongoose';
+var Product = require('../models/productModel.js');
+var User = require('../models/userModel.js');
+var mongoose = require('mongoose');
 
 // creating a post
 
-export const createPost = async (req, res) => {
+const createPost = async (req, res) => {
   const newPost = new Product(req.body);
 
   try {
@@ -18,7 +18,7 @@ export const createPost = async (req, res) => {
 
 // get a post
 
-export const getPost = async (req, res) => {
+const getPost = async (req, res) => {
   const id = req.params.id;
 
   try {
@@ -28,9 +28,8 @@ export const getPost = async (req, res) => {
     res.status(500).json(error);
   }
 };
-
 // update post
-export const updatePost = async (req, res) => {
+const updatePost = async (req, res) => {
   const postId = req.params.id;
   const { userId } = req.body;
 
@@ -46,7 +45,7 @@ export const updatePost = async (req, res) => {
 };
 
 // delete a post
-export const deletePost = async (req, res) => {
+const deletePost = async (req, res) => {
   const id = req.params.id;
   const { userId } = req.body;
 
@@ -64,7 +63,7 @@ export const deletePost = async (req, res) => {
 };
 
 // like/dislike a post
-export const likePost = async (req, res) => {
+const likePost = async (req, res) => {
   const id = req.params.id;
   const { userId } = req.body;
   try {
@@ -82,7 +81,7 @@ export const likePost = async (req, res) => {
 };
 
 // Get timeline posts
-export const getTimelinePosts = async (req, res) => {
+const getTimelinePosts = async (req, res) => {
   const userId = req.params.id;
   try {
     const currentUserPosts = await Product.find({ userId: userId });
@@ -119,4 +118,12 @@ export const getTimelinePosts = async (req, res) => {
   } catch (error) {
     res.status(500).json(error);
   }
+};
+module.exports = {
+  createPost,
+  getPost,
+  updatePost,
+  deletePost,
+  likePost,
+  getTimelinePosts,
 };

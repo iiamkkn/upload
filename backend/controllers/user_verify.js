@@ -1,16 +1,17 @@
-import User from '../models/userModel.js';
-import Token from '../models/token.js';
-import crypto from 'crypto';
-import sendEmail from '../utils/sendEmail.js';
-import bcrypt from 'bcrypt';
-import mg from 'mailgun-js';
-import jwt from 'jsonwebtoken';
-import NewsLetter from '../models/NewsLetterModel.js';
-import expressAsyncHandler from 'express-async-handler';
-import sendToken from '../utils/jwtToken.js';
-import ErrorHandler from '../utils/errorHandler.js';
+var User = require('../models/userModel.js');
+var NewsLetter = require('../models/NewsLetterModel.js');
+var Token = require('../models/token.js');
+var validator = require('validator');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var crypto = require('crypto');
+var sendEmail = require('utils/sendEmail.js');
+var mg = require('mailgun-js');
+var expressAsyncHandler = require('express-async-handler');
+var sendToken = require('../utils/jwtToken.js');
+var ErrorHandler = require('../utils/errorHandler.js');
 
-export const mailgun = () =>
+const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
@@ -75,8 +76,7 @@ export const mailgun = () =>
 //     // });
 //   });
 // };
-
-export const SignUp_user_verify = async (req, res) => {
+const SignUp_user_verify = async (req, res) => {
   try {
     // const { error } = validate(req.body);
     // if (error)
@@ -138,7 +138,7 @@ export const SignUp_user_verify = async (req, res) => {
 
 // try catch one
 
-export const SignUp_Link_verification = async (req, res) => {
+const SignUp_Link_verification = async (req, res) => {
   try {
     const user = await User.findOne({ _id: req.params.id });
     if (!user) return res.status(400).json({ message: 'Invalid user' });
@@ -196,7 +196,7 @@ export const SignUp_Link_verification = async (req, res) => {
 //   }
 // };
 
-export const Subscribe_newsLetter = async (req, res) => {
+const Subscribe_newsLetter = async (req, res) => {
   try {
     // const { error } = validate(req.body);
     // if (error)
@@ -250,7 +250,7 @@ export const Subscribe_newsLetter = async (req, res) => {
   }
 };
 
-export const user_forgetpass = async (req, res) => {
+const user_forgetpass = async (req, res) => {
   try {
     let user = await User.findOne({ email: req.body.email });
     if (!user)
@@ -292,39 +292,46 @@ export const user_forgetpass = async (req, res) => {
   }
 };
 
-export const user_forgetpass_update = expressAsyncHandler(
-  async (req, res, next) => {
-    // Hash URL token
-    const resetPasswordToken = crypto
-      .createHash('sha256')
-      .update(req.params.token)
-      .digest('hex');
+const user_forgetpass_update = expressAsyncHandler(async (req, res, next) => {
+  // Hash URL token
+  const resetPasswordToken = crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
 
-    const user = await User.findOne({
-      resetPasswordToken,
-      resetPasswordExpire: { $gt: Date.now() },
-    });
+  const user = await User.findOne({
+    resetPasswordToken,
+    resetPasswordExpire: { $gt: Date.now() },
+  });
 
-    if (!user) {
-      return next(new ErrorHandler('The Password Link is Expired.', 400));
-    }
-
-    if (req.body.password !== req.body.confirmPassword) {
-      return next(new ErrorHandler('Password does not match', 400));
-    }
-    if (req.body.password === '' || req.body.confirmPassword === '') {
-      return next(new ErrorHandler('Password Input is empty', 400));
-    }
-
-    // Setup new password
-    user.password = req.body.password;
-
-    user.resetPasswordToken = undefined;
-    user.resetPasswordExpire = undefined;
-
-    await user.save();
-
-    // sendToken(user, 200, res);
-    res.status(200).send({ message: 'Password upddated Successfully' });
+  if (!user) {
+    return next(new ErrorHandler('The Password Link is Expired.', 400));
   }
-);
+
+  if (req.body.password !== req.body.confirmPassword) {
+    return next(new ErrorHandler('Password does not match', 400));
+  }
+  if (req.body.password === '' || req.body.confirmPassword === '') {
+    return next(new ErrorHandler('Password Input is empty', 400));
+  }
+
+  // Setup new password
+  user.password = req.body.password;
+
+  user.resetPasswordToken = undefined;
+  user.resetPasswordExpire = undefined;
+
+  await user.save();
+
+  // sendToken(user, 200, res);
+  res.status(200).send({ message: 'Password upddated Successfully' });
+});
+
+module.exports = {
+  mailgun,
+  SignUp_user_verify,
+  SignUp_Link_verification,
+  Subscribe_newsLetter,
+  user_forgetpass,
+  user_forgetpass_update,
+};

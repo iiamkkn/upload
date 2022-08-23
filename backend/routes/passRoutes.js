@@ -1,15 +1,13 @@
-import express from 'express';
-import {
-  forgotPasswordv1,
-  resetPasswordv1,
-} from '../controllers/AuthController.js';
-import fileUpload from 'express-fileupload';
+var express = require('express');
+var mg = require('mailgun-js');
+var fileUpload = require('express-fileupload');
+var forgotPasswordv1 = require('../controllers/AuthController.js');
+var resetPasswordv1 = require('../controllers/AuthController.js');
 
 const app = express.Router();
 app.use(fileUpload());
-import mg from 'mailgun-js';
 
-export const mailgun = () =>
+const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
@@ -20,4 +18,4 @@ const passRoutes = express.Router();
 passRoutes.post('/password/forgot', forgotPasswordv1);
 passRoutes.put('/password/reset/:token', resetPasswordv1);
 
-export default passRoutes;
+module.exports = { passRoutes, mailgun };

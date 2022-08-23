@@ -1,41 +1,57 @@
-import express from 'express';
-import bcrypt from 'bcryptjs';
-import expressAsyncHandler from 'express-async-handler';
-import User from '../models/userModel.js';
-import jwt from 'jsonwebtoken';
-import Token from '../models/token.js';
-import { generateToken, isAdmin, isAuth, isSellerOrAdmin } from '../utils.js';
-import {
-  allUsersv1,
-  deleteUserv1,
-  forgotPasswordv1,
-  getUserDetailsv1,
-  getUserProfilev1,
-  loginUser,
-  loginUserv1,
-  logoutv1,
-  registerUser,
-  registerUserv1,
-  resetPasswordv1,
-  updatePasswordv1,
-  updateProfilev1,
-  updateUserv1,
-} from '../controllers/AuthController.js';
-import authMiddleWare from '../middleware/AuthMiddleware.js';
-import {
-  activateAccount,
-  deleteUser,
-  followUser,
-  getAllUsers,
-  getUser,
-  NewSignIn,
-  NewSignUp,
-  unfollowUser,
-  updateUser,
-} from '../controllers/UserController.js';
-import { authorizeRoles, isAuthenticatedUser } from '../middleware/auth.js';
-import ROLES_LIST from '../config/roles_list.js';
-import mg from 'mailgun-js';
+var express = require('express');
+var bcrypt = require('bcryptjs');
+var expressAsyncHandler = require('express-async-handler');
+var User = require('../models/userModel.js');
+var jwt = require('jsonwebtoken');
+var Token = require('../models/token.js');
+var generateToken = require('../utils.js');
+var isAdmin = require('../utils.js');
+var isAuth = require('../utils.js');
+var isSellerOrAdmin = require('../utils.js');
+
+var loginUserv1 = require('../controllers/AuthController.js');
+var logoutv1 = require('../controllers/AuthController.js');
+var registerUserv1 = require('../controllers/AuthController.js');
+
+// import {
+//   allUsersv1,
+//   deleteUserv1,
+//   forgotPasswordv1,
+//   getUserDetailsv1,
+//   getUserProfilev1,
+//   loginUser,
+//   loginUserv1,
+//   logoutv1,
+//   registerUser,
+//   registerUserv1,
+//   resetPasswordv1,
+//   updatePasswordv1,
+//   updateProfilev1,
+//   updateUserv1,
+// } from '../controllers/AuthController.js';
+// import authMiddleWare from '../middleware/AuthMiddleware.js';
+var activateAccount = require('../controllers/UserController.js');
+var followUser = require('../controllers/UserController.js');
+var getAllUsers = require('../controllers/UserController.js');
+var NewSignIn = require('../controllers/UserController.js');
+var NewSignUp = require('../controllers/UserController.js');
+var unfollowUser = require('../controllers/UserController.js');
+
+// import {
+//   activateAccount,
+//   deleteUser,
+//   followUser,
+//   getAllUsers,
+//   getUser,
+//   NewSignIn,
+//   NewSignUp,
+//   unfollowUser,
+//   updateUser,
+// } from '../controllers/UserController.js';
+// import { authorizeRoles, isAuthenticatedUser } from '../middleware/auth.js';
+// import ROLES_LIST from '../config/roles_list.js';
+// import mg from 'mailgun-js';
+var mg = require('mailgun-js');
 // import { SignUp_user_verify, SignUp_user_verify_get } from './user_verify.js';
 
 export const mailgun = () =>
@@ -618,4 +634,4 @@ userRouter.get('/logoutv1/:id', logoutv1);
 //   deleteUserv1
 // );
 
-export default userRouter;
+module.exports = { userRouter };

@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
-import validator from 'validator';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import crypto from 'crypto';
+var mongoose = require('mongoose');
+var validator = require('validator');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var crypto = require('crypto');
 
 //  Model Starts here
 const userSchema = new mongoose.Schema(
@@ -142,4 +142,4 @@ userSchema.methods.getResetPasswordToken = function () {
 };
 
 const User = mongoose.model('User', userSchema);
-export default User;
+module.exports = { User };

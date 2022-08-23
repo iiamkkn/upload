@@ -1,37 +1,38 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
+var dotenv = require('dotenv');
 dotenv.config();
-import expressAsyncHandler from 'express-async-handler';
+// import expressAsyncHandler from 'express-async-handler';
+var expressAsyncHandler = require('express-async-handler');
+var Stripe = require('stripe');
+// import Stripe from 'stripe';
 
-import Stripe from 'stripe';
 const sKEY = process.env.STRIPE_SECRET_KEY;
 const stripe = new Stripe(sKEY);
 
 // console.log(sKEY);
 // backend => /api/cc/payment/process
 
-export const processPaymentStripe = expressAsyncHandler(
-  async (req, res, next) => {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: req.body.amount,
-      currency: 'huf',
+const processPaymentStripe = expressAsyncHandler(async (req, res, next) => {
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount: req.body.amount,
+    currency: 'huf',
 
-      metadata: { integration_check: 'accept_a_payment' },
-    });
+    metadata: { integration_check: 'accept_a_payment' },
+  });
 
-    res.status(200).json({
-      success: true,
-      client_secret: paymentIntent.client_secret,
-    });
-  }
-);
+  res.status(200).json({
+    success: true,
+    client_secret: paymentIntent.client_secret,
+  });
+});
 
 // send api to frontend => /api/cc/payment/process/pay
-export const sendStripeApi = expressAsyncHandler(async (req, res, next) => {
+const sendStripeApi = expressAsyncHandler(async (req, res, next) => {
   res.status(200).json({
     stripeApiKey: process.env.STRIPE_API_KEY,
   });
 });
-
+module.exports = { sendStripeApi, processPaymentStripe };
 // import braintree from 'braintree';
 
 // const gateway = new braintree.BraintreeGateway({

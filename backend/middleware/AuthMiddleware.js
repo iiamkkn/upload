@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
+var jwt = require('jsonwebtoken');
+var dotenv = require('dotenv');
 
 dotenv.config();
 const secret = process.env.JWT_SECRET_KEY;
@@ -18,4 +18,4 @@ const authMiddleWare = async (req, res, next) => {
   }
 };
 
-export default authMiddleWare;
+module.exports = { authMiddleWare };

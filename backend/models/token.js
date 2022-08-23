@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -16,4 +16,4 @@ const tokenSchema = new Schema({
 // module.exports = mongoose.model('token', tokenSchema);
 
 const Token = mongoose.model('Token', tokenSchema);
-export default Token;
+module.exports = { Token };

@@ -1,7 +1,6 @@
-import nodemailer from 'nodemailer';
-
+var nodemailer = require('nodemailer');
 //  This is for For sending forget password
-export const sendEmail = async (options) => {
+const sendEmail = async (options) => {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
@@ -21,7 +20,7 @@ export const sendEmail = async (options) => {
   await transporter.sendMail(message);
 };
 
-export default sendEmail;
+module.exports = { sendEmail };
 
 // export const sendEmail = async (email, subject, text) => {
 //   try {

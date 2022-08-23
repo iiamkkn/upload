@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 const resetTokensSchema = new mongoose.Schema({
   token: {
@@ -19,4 +19,4 @@ const resetTokensSchema = new mongoose.Schema({
 });
 const resetToken = mongoose.model('resetToken', resetTokensSchema);
 
-export default resetToken;
+module.exports = { resetToken };

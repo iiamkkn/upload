@@ -1,8 +1,11 @@
-import express from 'express';
-import multer from 'multer';
-import { v2 as cloudinary } from 'cloudinary';
-import streamifier from 'streamifier';
-import { isAuth, isSellerOrAdmin } from '../utils.js';
+var express = require('express');
+var exprmulteress = require('multer');
+var cloudinary = require('cloudinary');
+var streamifier = require('streamifier');
+var isAuth = require('../utils.js');
+var isSellerOrAdmin = require('../utils.js');
+
+// import { v2 as cloudinary } from 'cloudinary';
 
 const upload = multer();
 
@@ -53,4 +56,4 @@ uploadRouter.post(
 //     console.error(error);
 //   }
 // });
-export default uploadRouter;
+module.exports = { uploadRouter };

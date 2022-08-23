@@ -1,19 +1,19 @@
-import User from '../models/userModel.js';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import mg from 'mailgun-js';
-import UserVerification from '../models/userVerificationModel.js';
-import nodemailer from 'nodemailer';
-import { v4 as uuidv4 } from 'uuid';
+var User = require('../models/userModel.js');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
+var mg = require('mailgun-js');
+var UserVerification = require('../models/userVerificationModel.js');
+var { v4: uuidv4 } = require('uuid');
 
-export const mailgun = () =>
+const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
   });
-
 // Get a User
-export const getUser = async (req, res) => {
+const getUser = async (req, res) => {
   const id = req.params.id;
 
   try {
@@ -31,7 +31,7 @@ export const getUser = async (req, res) => {
 };
 
 // Get all users
-export const getAllUsers = async (req, res) => {
+const getAllUsers = async (req, res) => {
   try {
     let users = await User.find();
     users = users.map((user) => {
@@ -46,7 +46,7 @@ export const getAllUsers = async (req, res) => {
 
 // udpate a user
 
-export const updateUser = async (req, res) => {
+const updateUser = async (req, res) => {
   const id = req.params.id;
   // console.log("Data Received", req.body)
   const { _id, currentUserAdmin, password } = req.body;
@@ -81,7 +81,7 @@ export const updateUser = async (req, res) => {
 };
 
 // Delete a user
-export const deleteUser = async (req, res) => {
+const deleteUser = async (req, res) => {
   const id = req.params.id;
 
   const { currentUserId, currentUserAdmin } = req.body;
@@ -100,7 +100,7 @@ export const deleteUser = async (req, res) => {
 
 // Follow a User
 // changed
-export const followUser = async (req, res) => {
+const followUser = async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
   // console.log(id, _id);
@@ -127,7 +127,7 @@ export const followUser = async (req, res) => {
 
 // Unfollow a User
 // changed
-export const unfollowUser = async (req, res) => {
+const unfollowUser = async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
 
@@ -151,7 +151,7 @@ export const unfollowUser = async (req, res) => {
   }
 };
 
-export const activateAccount = async (req, res, next) => {
+const activateAccount = async (req, res, next) => {
   const { RegisterverifyToken } = req.params;
   if (RegisterverifyToken) {
     jwt.verify(
@@ -237,7 +237,7 @@ export const activateAccount = async (req, res, next) => {
 // });
 //  New SignUp
 
-export const NewSignUp = async (req, res) => {
+const NewSignUp = async (req, res) => {
   let { name, email, password, username, dateOfBirth } = req.body;
   name = name.trim();
   email = email.trim();
@@ -337,7 +337,7 @@ export const NewSignUp = async (req, res) => {
   }
 };
 
-export const NewSignIn = async (req, res) => {
+const NewSignIn = async (req, res) => {
   let { email, password } = req.body;
   email = email.trim();
   password = password.trim();
@@ -388,4 +388,17 @@ export const NewSignIn = async (req, res) => {
         });
       });
   }
+};
+
+module.exports = {
+  mailgun,
+  getUser,
+  getAllUsers,
+  updateUser,
+  deleteUser,
+  followUser,
+  unfollowUser,
+  activateAccount,
+  NewSignUp,
+  NewSignIn,
 };

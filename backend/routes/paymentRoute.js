@@ -1,8 +1,6 @@
-import express from 'express';
-import {
-  processPaymentStripe,
-  sendStripeApi,
-} from '../controllers/paymentController.js';
+var express = require('express');
+var processPaymentStripe = require('../controllers/paymentController.js');
+var sendStripeApi = require('../controllers/paymentController.js');
 
 const PaymentRouter = express.Router();
 
@@ -16,4 +14,4 @@ PaymentRouter.get('/cc/payment/process/pay', sendStripeApi);
 // PaymentRouter.get('/generate/bt_token', generatePayToken);
 // PaymentRouter.post('/process/BTpayment', processBTPayment);
 
-export default PaymentRouter;
+module.exports = { PaymentRouter };

@@ -1,16 +1,30 @@
-import http from 'http';
-import { Server } from 'socket.io';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import express from 'express';
-import cloudinary from 'cloudinary';
-import seedRouter from './routes/seedRoutes.js';
-import productRouter from './routes/productRoutes.js';
-import userRouter from './routes/userRoutes.js';
-import orderRouter from './routes/orderRoutes.js';
-import uploadRouter from './routes/uploadRoutes.js';
-import PaymentRouter from './routes/paymentRoute.js';
-import bodyParser from 'body-parser';
+// import http from 'http';
+// import { Server } from 'socket.io';
+// import cors from 'cors';
+// import cookieParser from 'cookie-parser';
+// import express from 'express';
+// import cloudinary from 'cloudinary';
+// import seedRouter from './routes/seedRoutes.js';
+// import productRouter from './routes/productRoutes.js';
+// import userRouter from './routes/userRoutes.js';
+// import orderRouter from './routes/orderRoutes.js';
+// import uploadRouter from './routes/uploadRoutes.js';
+// import PaymentRouter from './routes/paymentRoute.js';
+// import bodyParser from 'body-parser';
+var http = require('http');
+var Server = require('socket.io');
+var cors = require('cors');
+var cookieParser = require('cookie-parser');
+var express = require('express');
+var cloudinary = require('cloudinary');
+var seedRouter = require('./routes/seedRoutes.js');
+var productRouter = require('./routes/productRoutes.js');
+var userRouter = require('./routes/userRoutes.js');
+var orderRouter = require('./routes/orderRoutes.js');
+var uploadRouter = require('./routes/uploadRoutes.js');
+var PaymentRouter = require('./routes/paymentRoute.js');
+var bodyParser = require('body-parser');
+
 // import fileUpload from 'express-fileupload';
 
 const app = express();
@@ -18,13 +32,19 @@ app.use(cookieParser());
 // app.use(fileUpload());
 
 // dotenv config
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
+var dotenv = require('dotenv');
+
 dotenv.config();
 
 // Connect to MongoDB
-import connectDB from './config/dbConn.js';
-import VerifyRouter from './routes/accountVerifyRoutes.js';
-import passRoutes from './routes/passRoutes.js';
+// import connectDB from './config/dbConn.js';
+// import VerifyRouter from './routes/accountVerifyRoutes.js';
+// import passRoutes from './routes/passRoutes.js';
+var connectDB = require('./config/dbConn.js');
+var VerifyRouter = require('./routes/accountVerifyRoutes.js');
+var passRoutes = require('./routes/passRoutes.js');
+
 connectDB();
 
 // built-in middleware for json

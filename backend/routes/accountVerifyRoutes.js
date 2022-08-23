@@ -1,11 +1,9 @@
-import express from 'express';
-import {
-  SignUp_user_verify,
-  SignUp_Link_verification,
-  Subscribe_newsLetter,
-  user_forgetpass,
-  user_forgetpass_update,
-} from '../controllers/user_verify.js';
+var express = require('express');
+var SignUp_user_verify = require('../controllers/user_verify.js');
+var SignUp_Link_verification = require('../controllers/user_verify.js');
+var user_forgetpass = require('../controllers/user_verify.js');
+var Subscribe_newsLetter = require('../controllers/user_verify.js');
+var user_forgetpass_update = require('../controllers/user_verify.js');
 
 const VerifyRouter = express.Router();
 
@@ -24,4 +22,4 @@ VerifyRouter.put(
   user_forgetpass_update
 );
 
-export default VerifyRouter;
+module.exports = { VerifyRouter };

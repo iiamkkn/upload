@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
-import mg from 'mailgun-js';
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
+var mg = require('mailgun-js');
 
-export const generateToken = (user) => {
+const generateToken = (user) => {
   return jwt.sign(
     {
       _id: user._id,
@@ -22,8 +22,7 @@ export const generateToken = (user) => {
     }
   );
 };
-
-export const isAuth = (req, res, next) => {
+const isAuth = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (authorization) {
     const token = authorization.slice(7, authorization.length); // Bearer XXXXXX
@@ -40,7 +39,7 @@ export const isAuth = (req, res, next) => {
   }
 };
 
-export const isAdmin = (req, res, next) => {
+const isAdmin = (req, res, next) => {
   if (req.user || (req.user && req.user.isAdmin)) {
     next();
   } else {
@@ -48,14 +47,15 @@ export const isAdmin = (req, res, next) => {
   }
 };
 
-export const isSeller = (req, res, next) => {
+const isSeller = (req, res, next) => {
   if (req.user && req.user.isSeller) {
     next();
   } else {
     res.status(401).send({ message: 'Invalid Seller Token' });
   }
 };
-export const isSellerOrAdmin = (req, res, next) => {
+
+const isSellerOrAdmin = (req, res, next) => {
   if (req.user && (req.user.isSeller || req.user.isAdmin)) {
     next();
   } else {
@@ -65,13 +65,13 @@ export const isSellerOrAdmin = (req, res, next) => {
 
 /// sending email notification on each paid purchase
 
-export const mailgun = () =>
+const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
   });
 
-export const payOrderEmailTemplate = (order) => {
+const payOrderEmailTemplate = (order) => {
   return `
   
   <div style="background-color: #fff; padding: 7px;">
@@ -201,6 +201,15 @@ export const payOrderEmailTemplate = (order) => {
   `;
 };
 
+module.exports = {
+  generateToken,
+  isAuth,
+  isAdmin,
+  isSeller,
+  isSellerOrAdmin,
+  mailgun,
+  payOrderEmailTemplate,
+};
 /* Header
 
 

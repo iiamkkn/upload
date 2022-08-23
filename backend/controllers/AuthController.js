@@ -1,23 +1,32 @@
-import User from '../models/userModel.js';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import expressAsyncHandler from 'express-async-handler';
-import sendToken from '../utils/jwtToken.js';
-import sendEmail from '../utils/sendEmail.js';
-import ErrorHandler from '../utils/errorHandler.js';
-import cloudinary from 'cloudinary';
-import crypto from 'crypto';
-import mg from 'mailgun-js';
+// import User from '../models/userModel.js';
+// import bcrypt from 'bcrypt';
+// import jwt from 'jsonwebtoken';
+// import expressAsyncHandler from 'express-async-handler';
+// import sendToken from '../utils/jwtToken.js';
+// import sendEmail from '../utils/sendEmail.js';
+// import ErrorHandler from '../utils/errorHandler.js';
+// import cloudinary from 'cloudinary';
+// import crypto from 'crypto';
+// import mg from 'mailgun-js';
 
+var User = require('../models/userModel.js');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var expressAsyncHandler = require('express-async-handler');
+var sendToken = require('../utils/jwtToken.js');
+var sendEmail = require('utils/sendEmail.js');
+var ErrorHandler = require('../utils/errorHandler.js');
+var cloudinary = require('cloudinary');
+var crypto = require('crypto');
+var mg = require('mailgun-js');
 // forgetPassword
-
-export const mailgun = () =>
+const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
   });
 
-export const forgetPassword = async (req, res) => {
+const forgetPassword = async (req, res) => {
   const { email } = req.body;
   User.findOne({ email: email }, (err, user) => {
     if (err || !user) {
@@ -60,7 +69,7 @@ export const forgetPassword = async (req, res) => {
 /////////////////////////////// forgetPassword ends
 
 // Register new user
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPass = await bcrypt.hash(req.body.password, salt);
   req.body.password = hashedPass;
@@ -89,7 +98,7 @@ export const registerUser = async (req, res) => {
 // Login User
 
 // Changed
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -119,7 +128,7 @@ export const loginUser = async (req, res) => {
 // This is v1 coding
 
 // Register a user   => /api/v1/register
-export const registerUserv1 = expressAsyncHandler(async (req, res, next) => {
+const registerUserv1 = expressAsyncHandler(async (req, res, next) => {
   const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
     folder: 'avatars',
     width: 150,
@@ -143,7 +152,7 @@ export const registerUserv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Login User  =>  /a[i/v1/login
-export const loginUserv1 = expressAsyncHandler(async (req, res, next) => {
+const loginUserv1 = expressAsyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   // Checks if email and password is entered by user
@@ -169,7 +178,7 @@ export const loginUserv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Forgot Password   =>  /api/v1/password/reset
-export const forgotPasswordv1 = expressAsyncHandler(async (req, res, next) => {
+const forgotPasswordv1 = expressAsyncHandler(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
 
   if (!user) {
@@ -233,7 +242,7 @@ export const forgotPasswordv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Reset Password   =>  /api/v1/password/reset/:token
-export const resetPasswordv1 = expressAsyncHandler(async (req, res, next) => {
+const resetPasswordv1 = expressAsyncHandler(async (req, res, next) => {
   // Hash URL token
   const resetPasswordToken = crypto
     .createHash('sha256')
@@ -270,7 +279,7 @@ export const resetPasswordv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Get currently logged in user details   =>   /api/v1/me
-export const getUserProfilev1 = expressAsyncHandler(async (req, res, next) => {
+const getUserProfilev1 = expressAsyncHandler(async (req, res, next) => {
   const user = await User.findById(req.user.id);
 
   res.status(200).json({
@@ -280,7 +289,7 @@ export const getUserProfilev1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Update / Change password   =>  /api/v1/password/update
-export const updatePasswordv1 = expressAsyncHandler(async (req, res, next) => {
+const updatePasswordv1 = expressAsyncHandler(async (req, res, next) => {
   const user = await User.findById(req.user.id).select('+password');
 
   // Check previous user password
@@ -296,7 +305,7 @@ export const updatePasswordv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Update user profile   =>   /api/v1/me/update
-export const updateProfilev1 = expressAsyncHandler(async (req, res, next) => {
+const updateProfilev1 = expressAsyncHandler(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
@@ -333,7 +342,7 @@ export const updateProfilev1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Logout user   =>   /api/v1/logout
-export const logoutv1 = expressAsyncHandler(async (req, res, next) => {
+const logoutv1 = expressAsyncHandler(async (req, res, next) => {
   // const userById = await User.find({ _id: req.params._id });
   res.cookie('token', null, {
     expires: new Date(Date.now()),
@@ -349,7 +358,7 @@ export const logoutv1 = expressAsyncHandler(async (req, res, next) => {
 // Admin Routes
 
 // Get all users   =>   /api/v1/admin/users
-export const allUsersv1 = expressAsyncHandler(async (req, res, next) => {
+const allUsersv1 = expressAsyncHandler(async (req, res, next) => {
   const users = await User.find();
 
   res.status(200).json({
@@ -359,7 +368,7 @@ export const allUsersv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Get user details   =>   /api/v1/admin/user/:id
-export const getUserDetailsv1 = expressAsyncHandler(async (req, res, next) => {
+const getUserDetailsv1 = expressAsyncHandler(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -375,7 +384,7 @@ export const getUserDetailsv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Update user profile   =>   /api/v1/admin/user/:id
-export const updateUserv1 = expressAsyncHandler(async (req, res, next) => {
+const updateUserv1 = expressAsyncHandler(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
@@ -394,7 +403,7 @@ export const updateUserv1 = expressAsyncHandler(async (req, res, next) => {
 });
 
 // Delete user   =>   /api/v1/admin/user/:id
-export const deleteUserv1 = expressAsyncHandler(async (req, res, next) => {
+const deleteUserv1 = expressAsyncHandler(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -413,3 +422,22 @@ export const deleteUserv1 = expressAsyncHandler(async (req, res, next) => {
     success: true,
   });
 });
+
+module.exports = {
+  mailgun,
+  forgetPassword,
+  registerUser,
+  loginUser,
+  registerUserv1,
+  loginUserv1,
+  forgotPasswordv1,
+  resetPasswordv1,
+  getUserProfilev1,
+  updatePasswordv1,
+  updateProfilev1,
+  logoutv1,
+  allUsersv1,
+  getUserDetailsv1,
+  updateUserv1,
+  deleteUserv1,
+};

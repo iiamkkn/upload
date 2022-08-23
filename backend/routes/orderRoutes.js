@@ -1,15 +1,13 @@
-import express from 'express';
-import expressAsyncHandler from 'express-async-handler';
-import Order from '../models/orderModel.js';
-import {
-  isAuth,
-  isAdmin,
-  isSellerOrAdmin,
-  mailgun,
-  payOrderEmailTemplate,
-} from '../utils.js';
-import User from '../models/userModel.js';
-import Product from '../models/productModel.js';
+var express = require('express');
+var expressAsyncHandler = require('express-async-handler');
+var Order = require('../models/orderModel.js');
+var User = require('../models/userModel.js');
+var Product = require('../models/productModel.js');
+var isAuth = require('../utils.js');
+var isAdmin = require('../utils.js');
+var isSellerOrAdmin = require('../utils.js');
+var mailgun = require('../utils.js');
+var payOrderEmailTemplate = require('../utils.js');
 
 const orderRouter = express.Router();
 
@@ -267,4 +265,4 @@ orderRouter.delete(
     }
   })
 );
-export default orderRouter;
+module.exports = { orderRouter };

@@ -1,5 +1,5 @@
 // Create and send token and save in the cookie.
-export const sendToken = (user, statusCode, res) => {
+const sendToken = (user, statusCode, res) => {
   // Create Jwt token
   const token = user.getJwtToken();
 
@@ -18,4 +18,4 @@ export const sendToken = (user, statusCode, res) => {
   });
 };
 
-export default sendToken;
+module.exports = { sendToken };
