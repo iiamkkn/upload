@@ -1,0 +1,34 @@
+.infoFormModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.5s ease !important;
+}
+.infoFormModal > div {
+  display: flex;
+  width: 90%;
+  place-content: center;
+  min-height: 36vh;
+}
+.top_modal_search_icon {
+  position: relative;
+  top: 17%;
+  left: 9%;
+  font-size: 1.2rem;
+}
+
+.infoFormModal > h3 {
+  color: #7e7e7e;
+}
+
+.mantine-pjgw9t {
+  border: none;
+  background: #eeee;
+  color: #000;
+}
+
+.mantine-pjgw9t:hover {
+  background: #d6d6d6ee;
+}

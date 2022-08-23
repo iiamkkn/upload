@@ -1,0 +1,108 @@
+.Featured_Products_Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.products1Seller {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 8rem;
+  height: 15rem;
+  position: relative;
+  /* padding: 20px; */
+  border-radius: 0.5rem;
+  border: none;
+  /* margin-bottom: 15rem; */
+  border-radius: 5px;
+}
+
+.products1-topSeller {
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  flex: 1;
+  border-radius: 0.5rem;
+  /* justify-content: center; */
+}
+
+.products1-bodySeller {
+  display: flex;
+  /* background-color: rgba(169, 253, 161, 0.637); */
+  background-color: #f7f7f7;
+  flex: 9;
+  align-items: center;
+  justify-content: center;
+  place-content: center;
+  height: 0px;
+}
+
+.products1-body-leftSeller {
+  display: flex;
+  flex: 9;
+  /* padding: 20px; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.products1-body-imageSeller {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 9;
+  object-fit: cover;
+}
+.products1-body-rightSeller {
+  display: flex;
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  padding: 5px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 35;
+  font-weight: 600;
+  border-radius: 0px 0px 0px 6px;
+}
+.products1-bottomSeller {
+  display: flex;
+  background-color: #fff;
+  padding: 0px 0px 2px 5px;
+  flex: 1;
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.products1-bottom-leftSeller {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding-top: 6px;
+}
+.products1-bottom-rightSeller {
+  display: flex;
+  /* flex: 2; */
+  font-weight: 600;
+}
+
+.products1-bottom-RatingSeller {
+  display: flex;
+  background-color: #fff;
+  padding: 4px 5px 5px 5px;
+  /* flex: 1; */
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+  border-top: 1px solid #e7e6e6;
+  border-radius: 5px;
+}
+
+.rating span {
+  color: #ffc000;
+}

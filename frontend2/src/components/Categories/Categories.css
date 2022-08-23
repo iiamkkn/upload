@@ -1,0 +1,25 @@
+.Category-link {
+  text-decoration: none;
+}
+.Category-link:hover {
+  color: blue;
+}
+.categoriesAPI {
+  /* height: 30px; */
+  padding: 5px;
+  font-family: arial;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.categoryflex {
+  font-family: arial;
+  display: flex;
+  color: rgb(94 94 94);
+  text-decoration: none;
+  cursor: pointer;
+}
+.categoryflex:hover {
+  text-decoration: underline;
+}

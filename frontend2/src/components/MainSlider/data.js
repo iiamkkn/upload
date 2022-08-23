@@ -1,0 +1,160 @@
+export const sliderItems = [
+  {
+    id: 1,
+    img: 'https://i.ibb.co/DG69bQ4/2.png',
+    title: 'SUMMER SALE',
+    titleHU: 'NYÁRI KIÁRUSÍTÁS',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    descHU:
+      'A STÍLUSBAN NE KÉSZÜLJ ALÁT! ÚJ ÉRKEZŐK ESETÉN LAKÁS 30% KEDVEZMÉNYBŐL.',
+    bg: 'f5fafd',
+  },
+  {
+    id: 2,
+    img: 'https://i.ibb.co/cXFnLLV/3.png',
+    title: 'AUTUMN COLLECTION',
+    titleHU: 'ŐSZI KOLLEKCIÓ',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    descHU:
+      'A STÍLUSBAN NE KÉSZÜLJ ALÁT! ÚJ ÉRKEZŐK ESETÉN LAKÁS 30% KEDVEZMÉNYBŐL.',
+    bg: 'fcf1ed',
+  },
+  {
+    id: 3,
+    img: 'https://i.ibb.co/DG69bQ4/2.png',
+    title: 'LOUNGEWEAR LOVE',
+    titleHU: 'NYÁRI KOLLEKCIÓ',
+    descHU:
+      'A STÍLUSBAN NE KÉSZÜLJ ALÁT! ÚJ ÉRKEZŐK ESETÉN LAKÁS 30% KEDVEZMÉNYBŐL.',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: 'fbf0f4',
+  },
+  {
+    id: 4,
+    img: 'https://i.ibb.co/cXFnLLV/3.png',
+    title: 'LOUNGEWEAR LOVE',
+    titleHU: 'ŐSZI KOLLEKCIÓ',
+    descHU:
+      'A STÍLUSBAN NE KÉSZÜLJ ALÁT! ÚJ ÉRKEZŐK ESETÉN LAKÁS 30% KEDVEZMÉNYBŐL.',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: 'fbf0f4',
+  },
+  {
+    id: 5,
+    img: 'https://i.ibb.co/DG69bQ4/2.png',
+    title: 'LOUNGEWEAR LOVE',
+    titleHU: 'NYÁRI KOLLEKCIÓ',
+    descHU:
+      'A STÍLUSBAN NE KÉSZÜLJ ALÁT! ÚJ ÉRKEZŐK ESETÉN LAKÁS 30% KEDVEZMÉNYBŐL.',
+    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    bg: 'fbf0f4',
+  },
+];
+
+export const data = {
+  products: [
+    {
+      _id: '1',
+      name: 'Nike Slim Skirt',
+      category: 'Skirt',
+      image: 'https://i.ibb.co/DG69bQ4/2.png',
+      price: 120,
+      countInStock: 10,
+      brand: 'Nike',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'high quality product',
+    },
+    {
+      _id: '2',
+      name: 'Adidas Fit Skirt',
+      category: 'Skirt',
+      image:
+        'https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png',
+      price: 100,
+      countInStock: 20,
+      brand: 'Adidas',
+      rating: 4.0,
+      numReviews: 10,
+      description: 'high quality product',
+    },
+    {
+      _id: '3',
+      name: 'Lacoste Free Skirt',
+      category: 'Skirt',
+      image:
+        'https://fiver.media/images/mu/2017/04/12/red-pleated-midi-skirt-red-54713-4.jpg',
+      price: 220,
+      countInStock: 0,
+      brand: 'Lacoste',
+      rating: 4.8,
+      numReviews: 17,
+      description: 'high quality product',
+    },
+    {
+      _id: '4',
+      name: 'Nike Slim Skirt',
+      category: 'Pants',
+      image:
+        'https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png',
+      price: 78,
+      countInStock: 15,
+      brand: 'Nike',
+      rating: 4.5,
+      numReviews: 14,
+      description: 'high quality product',
+    },
+    {
+      _id: '5',
+      name: 'Puma Slim Skirt',
+      category: 'Pants',
+      image:
+        'https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png',
+      price: 65,
+      countInStock: 5,
+      brand: 'Puma',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'high quality product',
+    },
+    {
+      _id: '6',
+      name: 'Adidas Fit Skirt',
+      category: 'Pants',
+      image:
+        'https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png',
+      price: 139,
+      countInStock: 12,
+      brand: 'Adidas',
+      rating: 4.5,
+      numReviews: 15,
+      description: 'high quality product',
+    },
+    {
+      _id: '7',
+      name: 'Adidas Fit Skirt',
+      category: 'Pants',
+      image:
+        'https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png',
+      price: 139,
+      countInStock: 12,
+      brand: 'Adidas',
+      rating: 4.5,
+      numReviews: 15,
+      description: 'high quality product',
+    },
+    {
+      _id: '8',
+      name: 'Adidas Fit Skirt',
+      category: 'Pants',
+      image:
+        'https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png',
+      price: 139,
+      countInStock: 12,
+      brand: 'Adidas',
+      rating: 4.5,
+      numReviews: 15,
+      description: 'high quality product',
+    },
+  ],
+};

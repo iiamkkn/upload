@@ -1,0 +1,13 @@
+.main-product-container {
+  background: #eeeeeead;
+}
+.main-product-container > h1 {
+  padding: 20px;
+  color: rgb(126 126 126);
+  margin-left: 2.5rem;
+}
+@media only screen and (max-width: 570px) {
+  .main-product-container > h1 {
+    margin-left: 0px;
+  }
+}

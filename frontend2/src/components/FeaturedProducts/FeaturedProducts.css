@@ -1,0 +1,226 @@
+.Featured_Products_Container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product_title {
+  z-index: 3;
+  font-size: 20px;
+  padding: 11px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  overflow: hidden;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 12%;
+  align-items: left;
+  justify-content: left;
+  color: #000;
+  background-color: #fff; /* f5fbfd */
+  /* opacity: 0.8; */
+  transition: all 0.5s ease;
+  text-transform: uppercase;
+}
+.product_title > a {
+  text-decoration: none;
+  color: white;
+}
+.product_title_price {
+  z-index: 3;
+
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 11px;
+  border: none;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 5%;
+  align-items: center;
+  justify-content: right;
+  color: #000;
+  /* opacity: 0.8; */
+  transition: all 0.5s ease;
+}
+
+.product_title_price,
+.product_title:hover {
+  /* color: #000; */
+  text-decoration: none;
+}
+
+.product_rating {
+  position: absolute;
+  bottom: 37px;
+  left: 0;
+  right: 0;
+  color: white;
+  transition: all 0.5s ease;
+  z-index: 55;
+}
+
+.product-main-container_Product {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 5px;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  /* width: 100%; */
+  /* height: 300px; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #f5fbfd; */
+  position: relative;
+  box-shadow: 10px 10px 10px rgb(220 220 220), -5px -5px 10px rgb(255 255 255);
+  border: 0.5px solid #ededed;
+}
+
+.product-main-container_Product > a {
+  text-decoration: none;
+  color: inherit;
+}
+.products1 {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 15rem;
+  height: 23rem;
+  position: relative;
+  /* padding: 20px; */
+  border-radius: 0.5rem;
+  border: none;
+  /* margin-bottom: 15rem; */
+  border-radius: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .products1 {
+    width: 10rem;
+    height: 17rem;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .products1 {
+    width: 10rem;
+    height: 17rem;
+  }
+}
+
+.products1-top {
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  flex: 1;
+  border-radius: 0.5rem;
+  /* justify-content: center; */
+}
+
+.products1-body {
+  display: flex;
+  /* background-color: rgba(169, 253, 161, 0.637); */
+  background-color: #f7f7f7;
+  flex: 9;
+  align-items: center;
+  justify-content: center;
+  place-content: center;
+  height: 0px;
+}
+
+.products1-body-left {
+  display: flex;
+  flex: 9;
+  /* padding: 20px; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.products1-body-image {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 9;
+  object-fit: cover;
+}
+.products1-body-right {
+  display: flex;
+  flex: 1;
+  border: 1px solid #e7e7e7;
+  background-color: #fff; /* fcddeb*/
+  padding: 5px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  font-weight: 600;
+  border-radius: 0px 0px 0px 6px;
+}
+.products1-bottom {
+  display: flex;
+  background-color: #fff;
+  padding: 0px 0px 2px 5px;
+  flex: 1;
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .products1-bottom {
+    padding: 0px 0px 14px 5px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .products1-bottom {
+    padding: 0px 0px 14px 5px;
+  }
+}
+
+.products1-bottom-left {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+.products1-bottom-right {
+  display: flex;
+  /* flex: 2; */
+  font-weight: 600;
+}
+
+.products1-bottom-Rating {
+  display: flex;
+  background-color: #fff;
+  padding: 4px 5px 5px 5px;
+  /* flex: 1; */
+  /* border-radius: 0.5rem; */
+  overflow: hidden;
+  border-top: 1px solid #e7e6e6;
+  border-radius: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .products1-bottom-Rating {
+    padding: 4px 0px 5px 0px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .products1-bottom-Rating {
+    padding: 4px 0px 5px 0px;
+  }
+}
+
+.rating span {
+  color: #ffc000;
+}

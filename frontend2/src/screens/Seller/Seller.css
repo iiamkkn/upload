@@ -1,0 +1,369 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 5px;
+  background: #fff;
+}
+.Left {
+  display: flex;
+  /* flex: 2; */
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 1rem;
+  padding-top: 0px;
+  /* margin-top: 2rem; */
+  overflow-x: clip;
+  /* background: #f7f7f7; */
+  -webkit-box-shadow: 2px 2px 17px -3px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 17px -3px rgba(0, 0, 0, 0.25);
+  border: 1px solid #eee;
+}
+
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 30vh;
+  width: 100vw;
+  float: center;
+  margin: auto;
+  position: relative;
+}
+.ProfileImages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  /* margin-top: 1.5rem; */
+  margin: 0;
+}
+
+.ProfileImages > img:nth-of-type(1) {
+  /* width: 100%;
+  height: 25vh; */
+  width: 100vw;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.ProfileImages > img:nth-of-type(2) {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -5rem;
+  left: 2rem;
+  /* box-shadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0px 0px 0px 2px rgb(0 0 0 / 10%);
+  /* box-shadow: 6px 0px 2px 1px #fff; */
+  border: 6px solid #ffffff;
+  object-fit: contain;
+  background: #fff;
+}
+.cover-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title_info_seller {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: -5rem;
+  left: 11rem;
+  gap: 1rem;
+}
+.title_info_seller > span:nth-of-type(1) {
+  font-weight: bold;
+  font-family: Urbanist;
+  font-size: 2rem;
+  /* position: absolute;
+  bottom: -4rem;
+  left: 11rem; */
+}
+.followDIV {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 0rem;
+  position: absolute;
+  /* bottom: -6.9rem; */
+  bottom: -6rem;
+  left: 11rem;
+  cursor: context-menu;
+}
+.edit_uilPen {
+  cursor: pointer;
+}
+.edit_uilPen:hover {
+  color: #000;
+}
+.Followers_sellers {
+  display: flex;
+  font-weight: normal;
+  font-family: arial;
+  font-size: 1rem;
+  /* position: absolute;
+  bottom: -6rem;
+  left: 11rem; */
+  color: rgb(94 94 94);
+  font-size: 0.9rem;
+}
+.verification_tick {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  /* background-color: #27e610; */
+  color: white;
+  position: relative;
+  top: 0.8rem;
+  opacity: 0.9;
+  cursor: context-menu;
+  border: 2px solid #fcf7f7;
+}
+.verification_tick:hover {
+  opacity: 1;
+  border: 2px solid #00d200;
+}
+.profile-container {
+  margin-top: 2rem;
+}
+.ProfileName {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 4rem;
+  gap: 10px;
+  padding: 0.5rem;
+}
+
+.ProfileName > span {
+  font-family: Arial;
+  font-size: 0.9rem;
+}
+
+.ProfileName > span:nth-of-type(1) {
+  font-weight: bold;
+  font-family: Urbanist;
+  font-size: 1.2rem;
+}
+
+.seller-contact {
+  color: blue;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.seller-contact:hover {
+  text-decoration: underline;
+}
+.hline {
+  width: 100%;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  border-top: 2px solid #cfcdcd;
+}
+.product-main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  /* background: #fcfef7; */
+  background: #fff;
+  margin-top: -1.4rem;
+}
+
+.Center {
+  display: flex;
+  flex-direction: row;
+  flex: 8;
+  gap: 1rem;
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+.Right {
+  display: flex;
+  flex: 1;
+  background-color: aqua;
+  padding: 10px;
+  /* margin-top: 2rem; */
+  -webkit-box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.25);
+  border: 1px solid #eee;
+}
+/* .follow_seller_btn {
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: #000;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+} */
+.follow_seller_btn {
+  position: relative;
+  bottom: 0px;
+  padding: 5px 27px 5px 27px;
+  background: #ffffff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #303030;
+  font-family: arial;
+  /* font-size: 1rem; */
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 2px 2px rgb(205 205 205 / 70%),
+    -1px -1px 2px rgb(205 205 205 / 50%), 0px 0px 0px rgb(205 205 205 / 8%),
+    1px 0px 0px rgb(0 0 0 / 15%);
+}
+.follow_seller_btn:hover {
+  border: 2px solid #41d941;
+  box-shadow: none;
+}
+.follow_seller_btn:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.Unfollow_seller_btn {
+  position: relative;
+  bottom: 0px;
+  padding: 5px 27px 5px 27px;
+  background: #ffffff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #303030;
+  font-family: arial;
+  /* font-size: 1rem; */
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 2px 2px rgb(205 205 205 / 70%),
+    -1px -1px 2px rgb(205 205 205 / 50%), 0px 0px 0px rgb(205 205 205 / 8%),
+    1px 0px 0px rgb(0 0 0 / 15%);
+}
+.Unfollow_seller_btn:hover {
+  border: 2px solid #f30505;
+  box-shadow: none;
+  /* padding: 5px 27px 5px 20px; */
+}
+.Unfollow_seller_btn:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.follow_unfollow_icon_div {
+  position: relative;
+  display: inline-block;
+  margin-top: -12px;
+}
+
+.follow_unfollow_icon_div:hover .cross_tick_followDIV {
+  display: block;
+  transition: 0.4s ease-in-out;
+}
+.cross_tick_followDIV {
+  padding-top: 1px;
+  padding-right: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.UI_icon_small_crossUNFOLLOW {
+  position: relative;
+  color: var(--redcross);
+  border: none;
+  cursor: context-menu;
+  border-radius: 100%;
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  bottom: -5px;
+  transition: 0.4s ease-in-out;
+}
+
+.UI_icon_small_crossFOLLOW {
+  position: relative;
+  color: var(--greentick);
+  border: none;
+  cursor: context-menu;
+  border-radius: 100%;
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  bottom: -5px;
+  transition: 0.4s ease-in-out;
+}
+
+@media only screen and (max-width: 570px) {
+  .cover-container {
+    margin-top: 5rem;
+  }
+  .ProfileImages > img:nth-of-type(2) {
+    position: relative;
+    bottom: 5rem;
+    left: 30%;
+  }
+  .title_info_seller {
+    bottom: -4rem;
+    left: 25%;
+  }
+  .followDIV {
+    left: 16%;
+    text-align: center;
+  }
+  .Unfollow_seller_btn {
+    bottom: -55px;
+    left: -112%;
+    width: 200px;
+  }
+  .follow_seller_btn {
+    bottom: -55px;
+    left: -112%;
+    width: 200px;
+  }
+  .profile-container {
+    margin-top: 3rem;
+  }
+}
+
+.normal_screen_pen {
+  display: flex;
+}
+
+.mob_pen {
+  display: none;
+}
+
+@media only screen and (max-width: 570px) {
+  .normal_screen_pen {
+    display: none;
+  }
+  .mob_pen {
+    display: flex;
+  }
+}

@@ -1,0 +1,359 @@
+.main-shippingAddress-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border: none;
+  box-shadow: -1px 1px 10px rgb(220 220 220), 0px 0px 1px rgb(220 220 220);
+  min-height: 70vh;
+  width: 70vw;
+  margin: auto;
+  padding: 1.5rem;
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  border: 0.1rem #ebebeb solid;
+  background-color: #f8f8f840;
+}
+@media only screen and (max-width: 570px) {
+  .main-shippingAddress-container {
+    width: 95vw;
+  }
+}
+
+.main-shippingAddress-container > h1 {
+  color: rgb(126 126 126);
+  padding: 1rem 0rem;
+  margin-left: -8rem;
+}
+@media only screen and (max-width: 570px) {
+  .main-shippingAddress-container > h1 {
+    margin-left: 0rem;
+  }
+}
+
+.ContineBTN {
+  display: flex;
+  font-size: 1rem;
+  padding: 0rem 3.5rem;
+  background-color: var(--blackbg);
+  align-items: center;
+  border-radius: 3px;
+  border: 0.5px solid #cbcbcb;
+  cursor: pointer;
+  color: #fff;
+  margin-left: -12.5rem;
+  margin-top: 1rem;
+}
+.ContineBTN:hover {
+  filter: brightness(1.2);
+  background-color: #000;
+  /* padding-right: 2rem; */
+}
+@media only screen and (max-width: 570px) {
+  .ContineBTN {
+    margin-left: 0px;
+  }
+}
+.ContineBTN i {
+  /* position: absolute;
+  top: 50%; */
+  margin-top: 1.3rem;
+  transform: translate(-10px, -50%);
+  display: inline-block;
+  font-size: 20px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.ContineBTN:hover i {
+  transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+.ContineBTN:active i {
+  transform: translate(10px, -50%);
+  opacity: 0.8;
+}
+
+.h1ColorClass {
+  color: rgb(126 126 126);
+  padding: 1rem 0rem;
+  /* margin-left: -8rem; */
+}
+
+.paymentbtnCTN {
+  display: flex;
+  font-size: 1rem;
+  padding: 0rem 3.5rem;
+  background-color: var(--blackbg);
+  align-items: center;
+  border-radius: 3px;
+  border: 0.5px solid #cbcbcb;
+  cursor: pointer;
+  color: #fff;
+  place-content: center;
+}
+.paymentbtnCTN:hover {
+  filter: brightness(1.2);
+  background-color: #000;
+  /* padding-right: 2rem; */
+}
+
+.paymentbtnCTN i {
+  margin-top: 1.3rem;
+  transform: translate(-10px, -50%);
+  display: inline-block;
+  font-size: 20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.paymentbtnCTN:hover i {
+  transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+.paymentbtnCTN:active i {
+  transform: translate(10px, -50%);
+  opacity: 0.8;
+}
+
+.radio-cont {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #000;
+}
+.radio-cont label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  cursor: pointer;
+  padding: 7px 9px;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.2s;
+}
+.radio-cont label:hover {
+  background-color: rgb(200, 200, 200, 0.5);
+}
+.radio-cont .check {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50em;
+  /* border: 2px solid #766df4; */
+  border: 2px solid #000;
+  position: absolute;
+  box-sizing: border-box;
+  transition: 0.2s linear;
+}
+.radio-cont input[type='radio'] {
+  visibility: hidden;
+}
+.radio-cont input[type='radio']:checked + .check {
+  border: 6px solid #000;
+}
+
+.orderLink {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.orderLink:hover {
+  text-decoration: underline;
+}
+
+.isSellAdmnRadio {
+  display: flex;
+  flex-direction: row;
+}
+
+.userUpdateBTN {
+  background-color: #262626;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.6rem 3rem;
+  border-radius: 3px;
+  margin-right: 1rem;
+  border: 1px solid #000;
+  transition: filter 300ms;
+  font-size: 0.9rem;
+  transition: all 0.5s ease;
+}
+.userUpdateBTN:hover {
+  background-color: #000;
+}
+
+.result-message {
+  line-height: 22px;
+  font-size: 16px;
+}
+
+.result-message a {
+  color: rgb(89, 111, 214);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#card-error {
+  color: rgb(105, 115, 134);
+  text-align: left;
+  font-size: 13px;
+  line-height: 17px;
+  margin-top: 12px;
+}
+
+#card-element {
+  border-radius: 4px 4px 0 0;
+  padding: 12px;
+  border: 1px solid rgba(50, 50, 93, 0.1);
+  height: 44px;
+  width: 100%;
+  background: white;
+}
+
+#payment-request-button {
+  margin-bottom: 32px;
+}
+
+/* Buttons and links */
+.PayNowSnipper {
+  background: #5469d4;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  border-radius: 0 0 4px 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  border-bottom: 2px solid #005ccf; /*4690eb*/
+}
+.PayNowSnipper:hover {
+  filter: contrast(115%);
+}
+.PayNowSnipper:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* spinner/processing state, errors */
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+}
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: '';
+}
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: #5469d4;
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  -webkit-transform-origin: 10.4px 10.2px;
+  transform-origin: 10.4px 10.2px;
+  -webkit-animation: loading 2s infinite ease 1.5s;
+  animation: loading 2s infinite ease 1.5s;
+}
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: #5469d4;
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  -webkit-transform-origin: 0px 10.2px;
+  transform-origin: 0px 10.2px;
+  -webkit-animation: loading 2s infinite ease;
+  animation: loading 2s infinite ease;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.orderDelPaidMsg {
+  background: #4dc366;
+  /* background: #54d46f; */
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  border-radius: 0 0 4px 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: context-menu;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgb(0 0 0 / 7%);
+  width: 100%;
+  border-bottom: 2px solid #02b32f;
+  text-align: center;
+}
+
+/* .orderDelPaidMsg:hover {
+  filter: brightness(1.05);
+} */
+
+.orderERRMsg {
+  background: #eb1c26;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  border-radius: 4px 4px 4px 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: context-menu;
+  display: block;
+  transition: all 0.5s ease;
+  box-shadow: 0px 4px 5.5px 0px rgb(0 0 0 / 7%);
+  width: 100%;
+  border-bottom: 2px solid #b30810;
+  text-align: center;
+  margin-top: 12px;
+}

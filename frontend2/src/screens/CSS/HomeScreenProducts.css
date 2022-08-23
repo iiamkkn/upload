@@ -1,0 +1,27 @@
+.Featured_Products_Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product_rating {
+  padding: 10px 5px;
+  margin-bottom: 4px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 93.5%;
+  height: 5%;
+  align-items: center;
+  justify-content: left;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+/* .rating span {
+  color: #ffc000;
+} */

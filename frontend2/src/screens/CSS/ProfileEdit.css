@@ -1,0 +1,188 @@
+@import url('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css');
+
+.upload-button input[type='file'] {
+  display: none;
+}
+.upload-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+}
+.upload-button > label {
+  display: flex;
+  padding: 0.4rem;
+  /* background-color: #766df4; */
+  background-color: var(--blackbg);
+  color: #fff;
+  font-size: 23px;
+  border-radius: 50em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.upload-button > label:hover {
+  /* background-color: #6d65e1; */
+  background-color: #000;
+}
+.upload-button > label:active {
+  /* background-color: #6d65e1; */
+  background-color: #000;
+}
+.upload-button span {
+  color: #000;
+  font-size: 0.9em;
+}
+.main-Userprofile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  /* box-shadow: -2px 4px 8px rgb(220 220 220), 2px 4px 8px rgb(220 220 220); */
+  width: 90vw;
+  min-height: 90vh;
+  margin: auto;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+.sellerImgs {
+  background: #000;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.sellerImgLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-Userprofile-container > h1 {
+  color: rgb(126 126 126);
+  padding: 2rem 0rem;
+  margin-left: -10rem;
+}
+
+.SellerDIV > h2 {
+  color: rgb(126 126 126);
+  padding: 2rem 0rem;
+}
+
+.profileUpdateBTN {
+  padding: 0.5rem 0rem;
+}
+.btnProfileUpdate {
+  display: flex;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  background-color: var(--blackbg);
+  align-items: center;
+  border-radius: 3px;
+  border: 0.5px solid #cbcbcb;
+  cursor: pointer;
+  color: #fff;
+  border-bottom: 2px solid #000;
+  width: 100%;
+  place-content: center;
+}
+.btnProfileUpdate:hover {
+  filter: brightness(1.2);
+  background-color: #000;
+  border-bottom: 2px solid var(--blackbg);
+}
+.contField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.contField .box {
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: center;
+  border: 0;
+  width: 400px;
+  border-radius: 5px;
+  padding: 4px 15px 6px;
+  font-size: 0.9em;
+  cursor: text;
+  /* background-color: rgb(220, 220, 220, 0.1); */
+  background-color: var(--inputbg);
+  transition: 0.3s;
+}
+@media only screen and (max-width: 570px) {
+  .contField .box {
+    width: 332px;
+  }
+}
+
+.contField .box:hover {
+  /* background-color:  rgb(220, 220, 220, 0.1); */
+  background-color: var(--inputbghover);
+}
+.contField .box:focus-within {
+  background-color: var(--inputbghover);
+  /* background-color: rgb(220, 220, 220, 0.2); */
+}
+
+.contField .box .input::-webkit-input-placeholder {
+  opacity: 0;
+}
+.contField .box .input::-moz-placeholder {
+  color: transparent !important;
+}
+
+.contField .box textarea {
+  resize: none;
+  height: 150px;
+}
+
+.contField .box .input {
+  border: 0;
+  background-color: rgb(0, 0, 0, 0);
+  outline: 0;
+  font-size: 15px;
+  transition: all 0.2s;
+  color: #000;
+}
+.contField .box .input + label {
+  transform-origin: left;
+  color: #565656;
+  cursor: text;
+  font-size: 15px;
+  user-select: none;
+  transition: all 0.2s;
+}
+.contField .box .input + label {
+  transform: translate(0, 50%) scale(1);
+}
+.contField .box .input:not(:placeholder-shown) + label,
+.contField .box .input:focus + label {
+  transform: translate(0, 0) scale(0.8);
+}
+
+@media only screen and (max-width: 570px) {
+  .main-Userprofile-container > h1 {
+    margin-left: 0rem;
+  }
+  .main-Userprofile-container {
+    width: 100%;
+    margin-top: 0rem;
+  }
+  .SellerDIV > h2 {
+    text-align: center;
+  }
+  .upload-button {
+    width: 300px;
+  }
+  .btnProfileUpdate {
+    width: 100%;
+    place-content: center;
+  }
+}

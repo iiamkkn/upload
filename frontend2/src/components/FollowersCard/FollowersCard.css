@@ -1,0 +1,97 @@
+.FollowersCard {
+  width: 100%;
+  border-radius: 0.7rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.follower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.follower > div {
+  display: flex;
+  gap: 10px;
+}
+
+.followerImage {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.name > span:nth-of-type(1) {
+  font-weight: bold;
+}
+
+.fc-button {
+  height: 2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.UnfollowButton {
+  color: black;
+  cursor: pointer;
+  background: #f3f3f3;
+  border: 2px solid #79c0fd;
+  border-radius: 4px;
+  margin-left: 12px;
+  padding: 7px 15px;
+  cursor: pointer;
+  width: 150px;
+}
+.UnfollowButton:hover {
+  border: 2px solid #63a4dd;
+  filter: brightness(1.04);
+}
+
+.followButton {
+  color: black;
+  cursor: pointer;
+  background: #f3f3f3;
+  border: 2px solid #7bfd79;
+  border-radius: 4px;
+  /* margin-left: 12px;
+  padding-left: 20px;
+  padding-right: 20px; */
+  cursor: pointer;
+  width: 150px;
+}
+.followButton:hover {
+  border: 2px solid #65e063;
+  filter: brightness(1.04);
+}
+.FollowersCard > span {
+  font-weight: bold;
+  color: orange;
+  align-self: center;
+  cursor: pointer;
+}
+
+.FollowersCard > h3 {
+  color: #7a7a7a;
+}
+
+.name > span:nth-child(2) {
+  color: #7e7e7e;
+}
+
+.follow_list_links {
+  text-decoration: none;
+  color: black;
+}
+.follow_list_links:hover {
+  text-decoration: underline;
+}

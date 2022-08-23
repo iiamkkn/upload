@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+.Nabvar {
+  font-family: 'Urbanist', sans-serif !important;
+}
+
+* {
+  /* background-color: #e8eaec; */
+  transition: all 0.5s ease;
+}
+.open_store_navbar {
+  border: 1px solid #000000;
+  padding: 4px 12px;
+  color: #000;
+  font-weight: 600;
+  /* border-radius: 3px; */
+  background: #fff;
+  cursor: pointer;
+}
+.open_store_navbar_mob {
+  border: 1px solid #000000;
+  padding: 4px 12px;
+  color: #000;
+  font-weight: 600;
+  /* border-radius: 3px; */
+  background: #fff;
+  cursor: pointer;
+  width: fit-content;
+  position: absolute;
+  right: 8%;
+  font-size: 13px;
+}
+.WishListBadge {
+  top: -18px;
+  right: 1px;
+  transform: scale(0.88) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  background-color: #008080;
+}
+
+.CartBadge {
+  top: -18px;
+  right: 1px;
+  transform: scale(0.88) translate(50%, -50%);
+  transform-origin: 100% 0%;
+  background-color: #008080;
+}
+
+.UserInfoLinks {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+.UserInfoLinks:hover {
+  text-decoration: underline;
+}
+.ArrowDropDownIcon {
+  margin-top: -10px;
+  margin-left: -10px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.ArrowDropDownIcon:hover {
+  opacity: 1;
+}
+.ArrowDropUpIcon {
+  margin-top: -10px;
+  margin-left: 37px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.ArrowDropUpIcon:hover {
+  opacity: 1;
+}
+.ArrowDropUpIcon2 {
+  margin-top: -10px;
+  margin-left: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.ArrowDropUpIcon2:hover {
+  opacity: 1;
+}
+
+.UserInfoLinksList {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  color: blue;
+  margin-left: -36px;
+  margin-right: 8px;
+}
+.UserInfoLinksList:hover {
+  text-decoration: underline;
+}
+
+.UserTitleInList {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  color: black;
+  margin-left: -30px;
+  margin-right: 8px;
+}
+
+.UserInfoLinksList_mob {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  color: #e7e0e0;
+}
+/* .UserInfoLinksList_mob:hover {
+  text-decoration: underline;
+} */
+
+.side_top_mob_user_img {
+  border-radius: 100%;
+  width: 65px;
+  height: 65px;
+  align-items: center;
+  place-content: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.SearchOutlinedIconstyle {
+  position: relative;
+  top: 7%;
+  left: 13%;
+}
+
+.SearchOutlinedIconP {
+  position: relative;
+  top: -88%;
+  left: 54%;
+  width: 78px;
+  height: 26px;
+}
+
+.top_search_model_div {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #eee;
+  display: flex;
+  font-weight: normal;
+  font-family: arial;
+  font-size: 1rem;
+  color: rgb(94 94 94);
+  height: 27px;
+  width: 113px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  padding: 0px;
+  cursor: pointer;
+}
+.top_search_model_div:hover {
+  border: 1px solid #7e7e7e;
+}
+@media only screen and (max-width: 570px) {
+  .top_search_model_div {
+    display: none;
+  }
+  .open_store_navbar_mob {
+    display: none;
+  }
+}
+
+/* Mobile Bottom Menu  starts*/
+.Botom_menu_container {
+  display: none;
+}
+.CartBadgeColor {
+  color: #fff;
+  margin-top: 7px;
+}
+@media only screen and (max-width: 1024px) {
+  .Botom_menu_container {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    position: fixed;
+    bottom: 0%;
+    background-color: #000000;
+    z-index: 1000;
+    width: 100vw;
+    height: 47px;
+    text-align: center;
+    align-items: center;
+    place-content: center;
+    gap: 2rem;
+    border-top: 1px solid #fff;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .Botom_menu_container {
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    position: fixed;
+    bottom: 0%;
+    background-color: #000000;
+    z-index: 1000;
+    width: 100vw;
+    height: 47px;
+    text-align: center;
+    align-items: center;
+    place-content: center;
+    gap: 2rem;
+    border-top: 1px solid #fff;
+  }
+}
+
+.Botom_menu_container > div {
+  display: flex;
+}
+
+.side_top_mob_user_img_bottom {
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  place-content: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+}
+/* ends here botto */
+@media only screen and (max-width: 1024px) {
+  .SearchOutlinedIconP {
+    display: none;
+  }
+  .top_search_model_div {
+    width: 30px;
+  }
+}
+
+.Z_bottom_logo {
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+  /* background-color: #eee; */
+  color: #fff;
+}
